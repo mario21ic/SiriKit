@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Intents
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        INPreferences.requestSiriAuthorization { (siriAuthorization) in
+            switch siriAuthorization {
+            case .authorized:
+                print("Fine")
+            case .denied, .notDetermined, .restricted:
+                print("Oh man!")
+            }
+        }
         return true
     }
 

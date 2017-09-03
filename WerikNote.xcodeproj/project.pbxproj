@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		037A278C1F5C4D6300EA9B87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A278B1F5C4D6300EA9B87 /* AppDelegate.swift */; };
+		037A278E1F5C4D6300EA9B87 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A278D1F5C4D6300EA9B87 /* NotesViewController.swift */; };
+		037A27911F5C4D6300EA9B87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037A278F1F5C4D6300EA9B87 /* Main.storyboard */; };
+		037A27931F5C4D6300EA9B87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037A27921F5C4D6300EA9B87 /* Assets.xcassets */; };
+		037A27961F5C4D6300EA9B87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037A27941F5C4D6300EA9B87 /* LaunchScreen.storyboard */; };
+		037A27A41F5C4EBB00EA9B87 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A27A31F5C4EBB00EA9B87 /* NoteTableViewCell.swift */; };
+		037A27A61F5C509000EA9B87 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A27A51F5C509000EA9B87 /* Note.swift */; };
+		037A27A81F5C595900EA9B87 /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A27A71F5C595900EA9B87 /* NoteDetailViewController.swift */; };
+		037A27B01F5C61CD00EA9B87 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A27AF1F5C61CD00EA9B87 /* IntentHandler.swift */; };
+		037A27B91F5C61CD00EA9B87 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037A27B81F5C61CD00EA9B87 /* IntentsUI.framework */; };
+		037A27BC1F5C61CD00EA9B87 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037A27BB1F5C61CD00EA9B87 /* IntentViewController.swift */; };
+		037A27BF1F5C61CD00EA9B87 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037A27BD1F5C61CD00EA9B87 /* MainInterface.storyboard */; };
+		037A27C31F5C61CD00EA9B87 /* IntentionAddNoteUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 037A27B61F5C61CD00EA9B87 /* IntentionAddNoteUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		037A27C61F5C61CD00EA9B87 /* IntentionAddNote.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 037A27AD1F5C61CD00EA9B87 /* IntentionAddNote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		037A27C11F5C61CD00EA9B87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 037A27801F5C4D6300EA9B87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 037A27B51F5C61CD00EA9B87;
+			remoteInfo = IntentionAddNoteUI;
+		};
+		037A27C41F5C61CD00EA9B87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 037A27801F5C4D6300EA9B87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 037A27AC1F5C61CD00EA9B87;
+			remoteInfo = IntentionAddNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		037A27CD1F5C61CE00EA9B87 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				037A27C31F5C61CD00EA9B87 /* IntentionAddNoteUI.appex in Embed App Extensions */,
+				037A27C61F5C61CD00EA9B87 /* IntentionAddNote.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		037A27881F5C4D6300EA9B87 /* WerikNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WerikNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		037A278B1F5C4D6300EA9B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		037A278D1F5C4D6300EA9B87 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		037A27901F5C4D6300EA9B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		037A27921F5C4D6300EA9B87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		037A27951F5C4D6300EA9B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		037A27971F5C4D6300EA9B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		037A279D1F5C4D9C00EA9B87 /* Siri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Siri.entitlements; sourceTree = "<group>"; };
+		037A27A31F5C4EBB00EA9B87 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		037A27A51F5C509000EA9B87 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		037A27A71F5C595900EA9B87 /* NoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
+		037A27AD1F5C61CD00EA9B87 /* IntentionAddNote.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentionAddNote.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		037A27AF1F5C61CD00EA9B87 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		037A27B11F5C61CD00EA9B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		037A27B61F5C61CD00EA9B87 /* IntentionAddNoteUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentionAddNoteUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		037A27B81F5C61CD00EA9B87 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		037A27BB1F5C61CD00EA9B87 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		037A27BE1F5C61CD00EA9B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		037A27C01F5C61CD00EA9B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03C79B8E1F5C6A1600E6F93D /* WerikNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WerikNote.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		037A27851F5C4D6300EA9B87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037A27AA1F5C61CD00EA9B87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037A27B31F5C61CD00EA9B87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				037A27B91F5C61CD00EA9B87 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		037A277F1F5C4D6300EA9B87 = {
+			isa = PBXGroup;
+			children = (
+				03C79B8E1F5C6A1600E6F93D /* WerikNote.entitlements */,
+				037A278A1F5C4D6300EA9B87 /* Siri */,
+				037A27AE1F5C61CD00EA9B87 /* IntentionAddNote */,
+				037A27BA1F5C61CD00EA9B87 /* IntentionAddNoteUI */,
+				037A27B71F5C61CD00EA9B87 /* Frameworks */,
+				037A27891F5C4D6300EA9B87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		037A27891F5C4D6300EA9B87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				037A27881F5C4D6300EA9B87 /* WerikNote.app */,
+				037A27AD1F5C61CD00EA9B87 /* IntentionAddNote.appex */,
+				037A27B61F5C61CD00EA9B87 /* IntentionAddNoteUI.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		037A278A1F5C4D6300EA9B87 /* Siri */ = {
+			isa = PBXGroup;
+			children = (
+				037A27A11F5C4E8700EA9B87 /* Resources */,
+				037A27A01F5C4E6A00EA9B87 /* Controller */,
+				037A279F1F5C4E6600EA9B87 /* View */,
+				037A279E1F5C4E5F00EA9B87 /* Model */,
+				037A279D1F5C4D9C00EA9B87 /* Siri.entitlements */,
+				037A278B1F5C4D6300EA9B87 /* AppDelegate.swift */,
+				037A27971F5C4D6300EA9B87 /* Info.plist */,
+			);
+			path = Siri;
+			sourceTree = "<group>";
+		};
+		037A279E1F5C4E5F00EA9B87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				037A27A51F5C509000EA9B87 /* Note.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		037A279F1F5C4E6600EA9B87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				037A27A21F5C4EA300EA9B87 /* Cell */,
+				037A278F1F5C4D6300EA9B87 /* Main.storyboard */,
+				037A27941F5C4D6300EA9B87 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		037A27A01F5C4E6A00EA9B87 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				037A278D1F5C4D6300EA9B87 /* NotesViewController.swift */,
+				037A27A71F5C595900EA9B87 /* NoteDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		037A27A11F5C4E8700EA9B87 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				037A27921F5C4D6300EA9B87 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		037A27A21F5C4EA300EA9B87 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				037A27A31F5C4EBB00EA9B87 /* NoteTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		037A27AE1F5C61CD00EA9B87 /* IntentionAddNote */ = {
+			isa = PBXGroup;
+			children = (
+				037A27AF1F5C61CD00EA9B87 /* IntentHandler.swift */,
+				037A27B11F5C61CD00EA9B87 /* Info.plist */,
+			);
+			path = IntentionAddNote;
+			sourceTree = "<group>";
+		};
+		037A27B71F5C61CD00EA9B87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				037A27B81F5C61CD00EA9B87 /* IntentsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		037A27BA1F5C61CD00EA9B87 /* IntentionAddNoteUI */ = {
+			isa = PBXGroup;
+			children = (
+				037A27BB1F5C61CD00EA9B87 /* IntentViewController.swift */,
+				037A27BD1F5C61CD00EA9B87 /* MainInterface.storyboard */,
+				037A27C01F5C61CD00EA9B87 /* Info.plist */,
+			);
+			path = IntentionAddNoteUI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		037A27871F5C4D6300EA9B87 /* WerikNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 037A279A1F5C4D6300EA9B87 /* Build configuration list for PBXNativeTarget "WerikNote" */;
+			buildPhases = (
+				037A27841F5C4D6300EA9B87 /* Sources */,
+				037A27851F5C4D6300EA9B87 /* Frameworks */,
+				037A27861F5C4D6300EA9B87 /* Resources */,
+				037A27CD1F5C61CE00EA9B87 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				037A27C21F5C61CD00EA9B87 /* PBXTargetDependency */,
+				037A27C51F5C61CD00EA9B87 /* PBXTargetDependency */,
+			);
+			name = WerikNote;
+			productName = Siri;
+			productReference = 037A27881F5C4D6300EA9B87 /* WerikNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		037A27AC1F5C61CD00EA9B87 /* IntentionAddNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 037A27CA1F5C61CE00EA9B87 /* Build configuration list for PBXNativeTarget "IntentionAddNote" */;
+			buildPhases = (
+				037A27A91F5C61CD00EA9B87 /* Sources */,
+				037A27AA1F5C61CD00EA9B87 /* Frameworks */,
+				037A27AB1F5C61CD00EA9B87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntentionAddNote;
+			productName = IntentionAddNote;
+			productReference = 037A27AD1F5C61CD00EA9B87 /* IntentionAddNote.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		037A27B51F5C61CD00EA9B87 /* IntentionAddNoteUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 037A27C71F5C61CE00EA9B87 /* Build configuration list for PBXNativeTarget "IntentionAddNoteUI" */;
+			buildPhases = (
+				037A27B21F5C61CD00EA9B87 /* Sources */,
+				037A27B31F5C61CD00EA9B87 /* Frameworks */,
+				037A27B41F5C61CD00EA9B87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntentionAddNoteUI;
+			productName = IntentionAddNoteUI;
+			productReference = 037A27B61F5C61CD00EA9B87 /* IntentionAddNoteUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		037A27801F5C4D6300EA9B87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Erik Flores";
+				TargetAttributes = {
+					037A27871F5C4D6300EA9B87 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Siri = {
+								enabled = 1;
+							};
+						};
+					};
+					037A27AC1F5C61CD00EA9B87 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					037A27B51F5C61CD00EA9B87 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 037A27831F5C4D6300EA9B87 /* Build configuration list for PBXProject "WerikNote" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 037A277F1F5C4D6300EA9B87;
+			productRefGroup = 037A27891F5C4D6300EA9B87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				037A27871F5C4D6300EA9B87 /* WerikNote */,
+				037A27AC1F5C61CD00EA9B87 /* IntentionAddNote */,
+				037A27B51F5C61CD00EA9B87 /* IntentionAddNoteUI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		037A27861F5C4D6300EA9B87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				037A27961F5C4D6300EA9B87 /* LaunchScreen.storyboard in Resources */,
+				037A27931F5C4D6300EA9B87 /* Assets.xcassets in Resources */,
+				037A27911F5C4D6300EA9B87 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037A27AB1F5C61CD00EA9B87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037A27B41F5C61CD00EA9B87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				037A27BF1F5C61CD00EA9B87 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		037A27841F5C4D6300EA9B87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				037A278E1F5C4D6300EA9B87 /* NotesViewController.swift in Sources */,
+				037A278C1F5C4D6300EA9B87 /* AppDelegate.swift in Sources */,
+				037A27A81F5C595900EA9B87 /* NoteDetailViewController.swift in Sources */,
+				037A27A41F5C4EBB00EA9B87 /* NoteTableViewCell.swift in Sources */,
+				037A27A61F5C509000EA9B87 /* Note.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037A27A91F5C61CD00EA9B87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				037A27B01F5C61CD00EA9B87 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		037A27B21F5C61CD00EA9B87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				037A27BC1F5C61CD00EA9B87 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		037A27C21F5C61CD00EA9B87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 037A27B51F5C61CD00EA9B87 /* IntentionAddNoteUI */;
+			targetProxy = 037A27C11F5C61CD00EA9B87 /* PBXContainerItemProxy */;
+		};
+		037A27C51F5C61CD00EA9B87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 037A27AC1F5C61CD00EA9B87 /* IntentionAddNote */;
+			targetProxy = 037A27C41F5C61CD00EA9B87 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		037A278F1F5C4D6300EA9B87 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				037A27901F5C4D6300EA9B87 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		037A27941F5C4D6300EA9B87 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				037A27951F5C4D6300EA9B87 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		037A27BD1F5C61CD00EA9B87 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				037A27BE1F5C61CD00EA9B87 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		037A27981F5C4D6300EA9B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		037A27991F5C4D6300EA9B87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		037A279B1F5C4D6300EA9B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WerikNote.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				INFOPLIST_FILE = Siri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.erikfloresq.Siri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		037A279C1F5C4D6300EA9B87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WerikNote.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				INFOPLIST_FILE = Siri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.erikfloresq.Siri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		037A27C81F5C61CE00EA9B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				INFOPLIST_FILE = IntentionAddNoteUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.erikfloresq.Siri.IntentionAddNoteUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		037A27C91F5C61CE00EA9B87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				INFOPLIST_FILE = IntentionAddNoteUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.erikfloresq.Siri.IntentionAddNoteUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		037A27CB1F5C61CE00EA9B87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				INFOPLIST_FILE = IntentionAddNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.erikfloresq.Siri.IntentionAddNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		037A27CC1F5C61CE00EA9B87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CPX7FN2K89;
+				INFOPLIST_FILE = IntentionAddNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.erikfloresq.Siri.IntentionAddNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		037A27831F5C4D6300EA9B87 /* Build configuration list for PBXProject "WerikNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				037A27981F5C4D6300EA9B87 /* Debug */,
+				037A27991F5C4D6300EA9B87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		037A279A1F5C4D6300EA9B87 /* Build configuration list for PBXNativeTarget "WerikNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				037A279B1F5C4D6300EA9B87 /* Debug */,
+				037A279C1F5C4D6300EA9B87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		037A27C71F5C61CE00EA9B87 /* Build configuration list for PBXNativeTarget "IntentionAddNoteUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				037A27C81F5C61CE00EA9B87 /* Debug */,
+				037A27C91F5C61CE00EA9B87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		037A27CA1F5C61CE00EA9B87 /* Build configuration list for PBXNativeTarget "IntentionAddNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				037A27CB1F5C61CE00EA9B87 /* Debug */,
+				037A27CC1F5C61CE00EA9B87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 037A27801F5C4D6300EA9B87 /* Project object */;
+}
