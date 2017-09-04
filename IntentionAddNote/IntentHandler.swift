@@ -17,7 +17,7 @@ import Intents
 // "<myApp> John saying hello"
 // "Search for messages in <myApp>"
 
-class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessagesIntentHandling, INSetMessageAttributeIntentHandling {
+class IntentHandler: INExtension {
     
     override func handler(for intent: INIntent) -> Any {
         // This is the default implementation.  If you want different objects to handle different intents,
@@ -26,99 +26,84 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
         return self
     }
     
-    // MARK: - INSendMessageIntentHandling
-    
-    // Implement resolution methods to provide additional information about your intent (optional).
-    func resolveRecipients(for intent: INSendMessageIntent, with completion: @escaping ([INPersonResolutionResult]) -> Void) {
-        if let recipients = intent.recipients {
-            
-            // If no recipients were provided we'll need to prompt for a value.
-            if recipients.count == 0 {
-                completion([INPersonResolutionResult.needsValue()])
-                return
-            }
-            
-            var resolutionResults = [INPersonResolutionResult]()
-            for recipient in recipients {
-                let matchingContacts = [recipient] // Implement your contact matching logic here to create an array of matching contacts
-                switch matchingContacts.count {
-                case 2  ... Int.max:
-                    // We need Siri's help to ask user to pick one from the matches.
-                    resolutionResults += [INPersonResolutionResult.disambiguation(with: matchingContacts)]
-                    
-                case 1:
-                    // We have exactly one matching contact
-                    resolutionResults += [INPersonResolutionResult.success(with: recipient)]
-                    
-                case 0:
-                    // We have no contacts matching the description provided
-                    resolutionResults += [INPersonResolutionResult.unsupported()]
-                    
-                default:
-                    break
-                    
-                }
-            }
-            completion(resolutionResults)
-        }
-    }
-    
-    func resolveContent(for intent: INSendMessageIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
-        if let text = intent.content, !text.isEmpty {
-            completion(INStringResolutionResult.success(with: text))
-        } else {
-            completion(INStringResolutionResult.needsValue())
-        }
-    }
-    
-    // Once resolution is completed, perform validation on the intent and provide confirmation (optional).
-    
-    func confirm(intent: INSendMessageIntent, completion: @escaping (INSendMessageIntentResponse) -> Void) {
-        // Verify user is authenticated and your app is ready to send a message.
-        
-        let userActivity = NSUserActivity(activityType: NSStringFromClass(INSendMessageIntent.self))
-        let response = INSendMessageIntentResponse(code: .ready, userActivity: userActivity)
-        completion(response)
-    }
-    
-    // Handle the completed intent (required).
-    
-    func handle(intent: INSendMessageIntent, completion: @escaping (INSendMessageIntentResponse) -> Void) {
-        // Implement your application logic to send a message here.
-        
-        let userActivity = NSUserActivity(activityType: NSStringFromClass(INSendMessageIntent.self))
-        let response = INSendMessageIntentResponse(code: .success, userActivity: userActivity)
-        completion(response)
-    }
-    
-    // Implement handlers for each intent you wish to handle.  As an example for messages, you may wish to also handle searchForMessages and setMessageAttributes.
-    
-    // MARK: - INSearchForMessagesIntentHandling
-    
-    func handle(intent: INSearchForMessagesIntent, completion: @escaping (INSearchForMessagesIntentResponse) -> Void) {
-        // Implement your application logic to find a message that matches the information in the intent.
-        
-        let userActivity = NSUserActivity(activityType: NSStringFromClass(INSearchForMessagesIntent.self))
-        let response = INSearchForMessagesIntentResponse(code: .success, userActivity: userActivity)
-        // Initialize with found message's attributes
-        response.messages = [INMessage(
-            identifier: "identifier",
-            content: "I am so excited about SiriKit!",
-            dateSent: Date(),
-            sender: INPerson(personHandle: INPersonHandle(value: "sarah@example.com", type: .emailAddress), nameComponents: nil, displayName: "Sarah", image: nil,  contactIdentifier: nil, customIdentifier: nil),
-            recipients: [INPerson(personHandle: INPersonHandle(value: "+1-415-555-5555", type: .phoneNumber), nameComponents: nil, displayName: "John", image: nil,  contactIdentifier: nil, customIdentifier: nil)]
-            )]
-        completion(response)
-    }
-    
-    // MARK: - INSetMessageAttributeIntentHandling
-    
-    func handle(intent: INSetMessageAttributeIntent, completion: @escaping (INSetMessageAttributeIntentResponse) -> Void) {
-        // Implement your application logic to set the message attribute here.
-        
-        let userActivity = NSUserActivity(activityType: NSStringFromClass(INSetMessageAttributeIntent.self))
-        let response = INSetMessageAttributeIntentResponse(code: .success, userActivity: userActivity)
-        completion(response)
-    }
 }
 
+//MARK: - INCreateNoteIntentHandling
+
+extension IntentHandler: INCreateNoteIntentHandling {
+    
+    func resolveGroupName(for intent: INCreateNoteIntent, with completion: @escaping (INSpeakableStringResolutionResult) -> Void) {
+        print("Resolve Group \(intent)")
+        if let text = intent.title {
+            completion(INSpeakableStringResolutionResult.success(with: text))
+        } else {
+            completion(INSpeakableStringResolutionResult.needsValue())
+        }
+    }
+    
+    func resolveTitle(for intent: INCreateNoteIntent, with completion: @escaping (INSpeakableStringResolutionResult) -> Void) {
+        print("Resolve Title \(intent)")
+        if let text = intent.title {
+            completion(INSpeakableStringResolutionResult.success(with: text))
+        } else {
+            completion(INSpeakableStringResolutionResult.needsValue())
+        }
+    }
+    
+    func resolveContent(for intent: INCreateNoteIntent, with completion: @escaping (INNoteContentResolutionResult) -> Void) {
+        print("Resolve Content \(intent)")
+        if let text = intent.content {
+            completion(INNoteContentResolutionResult.success(with: text))
+        } else {
+            completion(INNoteContentResolutionResult.needsValue())
+        }
+    }
+    
+    func confirm(intent: INCreateNoteIntent, completion: @escaping (INCreateNoteIntentResponse) -> Void) {
+        print("Confirm create \(intent)")
+        let userActivity = NSUserActivity(activityType: NSStringFromClass(INCreateNoteIntent.self))
+        let response = INCreateNoteIntentResponse(code: .ready, userActivity: userActivity)
+        completion(response)
+    }
+    
+    func handle(intent: INCreateNoteIntent, completion: @escaping (INCreateNoteIntentResponse) -> Void) {
+        print("handle \(intent)")
+        print("save title \((intent.content?.value(forKey: "text"))!)")
+        print("group \((intent.title?.spokenPhrase)!)")
+        NotesManager.sharedInstance.add(note: (intent.content?.value(forKey: "text"))! as! String, toGroup: (intent.title?.spokenPhrase)!)
+        let userActivity = NSUserActivity(activityType: NSStringFromClass(INCreateNoteIntent.self))
+        let response = INCreateNoteIntentResponse(code: .success, userActivity: userActivity)
+        response.createdNote = INNote(title: intent.title!, contents: [intent.content!], groupName: intent.groupName, createdDateComponents: nil, modifiedDateComponents: nil, identifier: nil)
+        completion(response)
+    }
+    
+}
+
+//MARK: - INAppendToNoteIntentHandling
+
+extension IntentHandler: INAppendToNoteIntentHandling {
+    
+    func resolveContent(for intent: INAppendToNoteIntent, with completion: @escaping (INNoteContentResolutionResult) -> Void) {
+        print("Resolve Content \(intent)")
+        if let text = intent.content {
+            completion(INNoteContentResolutionResult.success(with: text))
+        } else {
+            completion(INNoteContentResolutionResult.needsValue())
+        }
+    }
+    
+    func confirm(intent: INAppendToNoteIntent, completion: @escaping (INAppendToNoteIntentResponse) -> Void) {
+        print("Confirm Append \(intent)")
+        let userActivity = NSUserActivity(activityType: NSStringFromClass(INAppendToNoteIntent.self))
+        let response = INAppendToNoteIntentResponse(code: .ready, userActivity: userActivity)
+        completion(response)
+    }
+    
+    func handle(intent: INAppendToNoteIntent, completion: @escaping (INAppendToNoteIntentResponse) -> Void) {
+        print("handle INAppendToNoteIntent - \(intent)")
+        let userActivity = NSUserActivity(activityType: NSStringFromClass(INAppendToNoteIntent.self))
+        let response = INAppendToNoteIntentResponse(code: .success, userActivity: userActivity)
+        completion(response)
+    }
+    
+}

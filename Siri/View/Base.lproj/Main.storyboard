@@ -13,7 +13,7 @@
         <!--SiriNotes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NotesViewController" customModule="Siri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NotesViewController" customModule="WerikNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,29 +22,41 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" id="2DW-du-dBn" customClass="NoteTableViewCell" customModule="Siri" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" rowHeight="69" id="2DW-du-dBn" customClass="NoteTableViewCell" customModule="WerikNote" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2DW-du-dBn" id="Gd4-4n-hEQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3j-tW-z3a">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KvE-Rh-8vV">
+                                                    <rect key="frame" x="8" y="8" width="359" height="52.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZC-Ig-qYG">
+                                                            <rect key="frame" x="0.0" y="0.0" width="43.5" height="30.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3j-tW-z3a">
+                                                            <rect key="frame" x="0.0" y="35.5" width="35.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.35653463540000002" green="0.35470625259999999" blue="0.35836301809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="p3j-tW-z3a" secondAttribute="bottom" id="WIN-44-5uO"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="p3j-tW-z3a" secondAttribute="trailing" id="XSA-fy-LoV"/>
-                                                <constraint firstItem="p3j-tW-z3a" firstAttribute="top" secondItem="Gd4-4n-hEQ" secondAttribute="topMargin" id="Zbv-Tu-oHs"/>
-                                                <constraint firstItem="p3j-tW-z3a" firstAttribute="leading" secondItem="Gd4-4n-hEQ" secondAttribute="leadingMargin" id="dS6-Gb-XsU"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="KvE-Rh-8vV" secondAttribute="bottom" id="ASr-tW-yGc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="KvE-Rh-8vV" secondAttribute="trailing" id="DgE-GB-fbC"/>
+                                                <constraint firstItem="KvE-Rh-8vV" firstAttribute="leading" secondItem="Gd4-4n-hEQ" secondAttribute="leadingMargin" id="E9D-Q8-4xf"/>
+                                                <constraint firstItem="KvE-Rh-8vV" firstAttribute="top" secondItem="Gd4-4n-hEQ" secondAttribute="topMargin" id="a9m-HR-Cya"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="noteDescription" destination="p3j-tW-z3a" id="xsg-3b-UjD"/>
+                                            <outlet property="content" destination="p3j-tW-z3a" id="iTv-zt-dCF"/>
+                                            <outlet property="title" destination="iZC-Ig-qYG" id="qoV-55-BVL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -78,7 +90,7 @@
         <!--Detail-->
         <scene sceneID="hYK-33-3MW">
             <objects>
-                <viewController id="tWf-fS-Gej" customClass="NoteDetailViewController" customModule="Siri" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tWf-fS-Gej" customClass="NoteDetailViewController" customModule="WerikNote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NVD-qi-DzH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

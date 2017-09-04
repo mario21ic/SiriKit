@@ -23,6 +23,7 @@ class NotesViewController: UIViewController {
         super.viewDidLoad()
         notesTableView.dataSource = self
         notesTableView.delegate = self
+        addStoredDataToMemory()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,7 +32,7 @@ class NotesViewController: UIViewController {
                 fatalError("Error parsing NoteDetailViewController")
             }
             let indexPath = notesTableView.indexPathForSelectedRow
-            noteDetailViewController.noteDescription = notes[(indexPath?.row)!].description
+            noteDetailViewController.note = notes[(indexPath?.row)!]
         }
     }
     
@@ -39,16 +40,27 @@ class NotesViewController: UIViewController {
         showAlertForAddNote()
     }
     
+    func addStoredDataToMemory() {
+        let storeNotes: [String: String] = NotesManager.sharedInstance.notes()
+        for (_, item) in storeNotes.enumerated() {
+            self.notes.append(Note(title: item.key, content: item.value, groupName: item.key))
+        }
+    }
+    
     func showAlertForAddNote() {
         let alert = UIAlertController(title: "Notes", message: "Add new Note", preferredStyle: .alert)
         let okButton = UIAlertAction(title: "OK", style: .default) { (alertAction) in
-            let newNote = alert.textFields![0].text
-            let count = self.notes.count
-            self.notes.append(Note(id: count+1, description: newNote))
+            let titleNote = alert.textFields![0].text
+            let contentNote = alert.textFields![1].text
+            NotesManager.sharedInstance.add(note: contentNote!, toGroup: titleNote!)
+            self.addStoredDataToMemory()
         }
         let cancelButton = UIAlertAction(title: "Cancel", style: .destructive)
         alert.addTextField { (textField) in
-            textField.placeholder = "example: make good things"
+            textField.placeholder = "Title for your note"
+        }
+        alert.addTextField { (textField) in
+                textField.placeholder = "content for your note"
         }
         alert.addAction(okButton)
         alert.addAction(cancelButton)
@@ -68,7 +80,8 @@ extension NotesViewController: UITableViewDataSource {
         guard let noteCell = cell as? NoteTableViewCell else {
             fatalError("Errro parsing NoteTableViewCell")
         }
-        noteCell.noteDescription.text = notes[indexPath.row].description
+        noteCell.title.text = notes[indexPath.row].title
+        noteCell.content.text = notes[indexPath.row].content
         return noteCell
     }
 }

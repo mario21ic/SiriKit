@@ -9,6 +9,7 @@
 import Foundation
 
 struct Note {
-    var id: Int?
-    var description: String?
+    var title: String?
+    var content: String?
+    var groupName: String?
 }

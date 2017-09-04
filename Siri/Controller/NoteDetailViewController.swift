@@ -11,11 +11,12 @@ import UIKit
 class NoteDetailViewController: UIViewController {
     
     @IBOutlet weak var noteTextView: UITextView!
-    var noteDescription:String? = ""
+    var note:Note?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        noteTextView.text = noteDescription
+        navigationItem.title = note?.title
+        noteTextView.text = note?.content
     }
 
 }

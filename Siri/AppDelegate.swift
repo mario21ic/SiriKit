@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         INPreferences.requestSiriAuthorization { (siriAuthorization) in
             switch siriAuthorization {
             case .authorized:
-                print("Fine")
+                print("Siri is alive!")
             case .denied, .notDetermined, .restricted:
-                print("Oh man!")
+                print("Oh man! You maybe accept Siri!")
             }
         }
         return true

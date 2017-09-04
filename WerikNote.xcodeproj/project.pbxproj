@@ -21,6 +21,9 @@
 		037A27BF1F5C61CD00EA9B87 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 037A27BD1F5C61CD00EA9B87 /* MainInterface.storyboard */; };
 		037A27C31F5C61CD00EA9B87 /* IntentionAddNoteUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 037A27B61F5C61CD00EA9B87 /* IntentionAddNoteUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		037A27C61F5C61CD00EA9B87 /* IntentionAddNote.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 037A27AD1F5C61CD00EA9B87 /* IntentionAddNote.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		03C79B901F5CE8D800E6F93D /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C79B8F1F5CE8D800E6F93D /* NotesManager.swift */; };
+		03C79B911F5CE8D800E6F93D /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C79B8F1F5CE8D800E6F93D /* NotesManager.swift */; };
+		03C79B921F5CE8D800E6F93D /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C79B8F1F5CE8D800E6F93D /* NotesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		031EDC2D1F5D0C7A00CC461F /* IntentionAddNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentionAddNote.entitlements; sourceTree = "<group>"; };
 		037A27881F5C4D6300EA9B87 /* WerikNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WerikNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		037A278B1F5C4D6300EA9B87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		037A278D1F5C4D6300EA9B87 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		037A27BE1F5C61CD00EA9B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		037A27C01F5C61CD00EA9B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C79B8E1F5C6A1600E6F93D /* WerikNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WerikNote.entitlements; sourceTree = "<group>"; };
+		03C79B8F1F5CE8D800E6F93D /* NotesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +168,7 @@
 			children = (
 				037A278D1F5C4D6300EA9B87 /* NotesViewController.swift */,
 				037A27A71F5C595900EA9B87 /* NoteDetailViewController.swift */,
+				03C79B8F1F5CE8D800E6F93D /* NotesManager.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 		037A27AE1F5C61CD00EA9B87 /* IntentionAddNote */ = {
 			isa = PBXGroup;
 			children = (
+				031EDC2D1F5D0C7A00CC461F /* IntentionAddNote.entitlements */,
 				037A27AF1F5C61CD00EA9B87 /* IntentHandler.swift */,
 				037A27B11F5C61CD00EA9B87 /* Info.plist */,
 			);
@@ -281,6 +288,9 @@
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Siri = {
 								enabled = 1;
 							};
@@ -289,6 +299,11 @@
 					037A27AC1F5C61CD00EA9B87 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					037A27B51F5C61CD00EA9B87 = {
 						CreatedOnToolsVersion = 9.0;
@@ -350,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037A278E1F5C4D6300EA9B87 /* NotesViewController.swift in Sources */,
+				03C79B901F5CE8D800E6F93D /* NotesManager.swift in Sources */,
 				037A278C1F5C4D6300EA9B87 /* AppDelegate.swift in Sources */,
 				037A27A81F5C595900EA9B87 /* NoteDetailViewController.swift in Sources */,
 				037A27A41F5C4EBB00EA9B87 /* NoteTableViewCell.swift in Sources */,
@@ -362,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037A27B01F5C61CD00EA9B87 /* IntentHandler.swift in Sources */,
+				03C79B911F5CE8D800E6F93D /* NotesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				037A27BC1F5C61CD00EA9B87 /* IntentViewController.swift in Sources */,
+				03C79B921F5CE8D800E6F93D /* NotesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,6 +608,7 @@
 		037A27CB1F5C61CE00EA9B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentionAddNote/IntentionAddNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CPX7FN2K89;
 				INFOPLIST_FILE = IntentionAddNote/Info.plist;
@@ -605,6 +624,7 @@
 		037A27CC1F5C61CE00EA9B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = IntentionAddNote/IntentionAddNote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CPX7FN2K89;
 				INFOPLIST_FILE = IntentionAddNote/Info.plist;

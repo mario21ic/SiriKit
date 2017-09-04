@@ -28,9 +28,8 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
-				<string>INSendMessageIntent</string>
-				<string>INSearchForMessagesIntent</string>
-				<string>INSetMessageAttributeIntent</string>
+				<string>INCreateNoteIntent</string>
+				<string>INAppendToNoteIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
